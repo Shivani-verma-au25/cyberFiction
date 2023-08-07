@@ -392,7 +392,7 @@ function scaleImage(img, ctx) {
   var canvas = ctx.canvas;
   var hRatio = canvas.width / img.width;
   var vRatio = canvas.height / img.height;
-  var ratio = Math.max(hRatio, vRatio);
+  var ratio = Math.min(hRatio, vRatio);
   var centerShift_x = (canvas.width - img.width * ratio) / 2;
   var centerShift_y = (canvas.height - img.height * ratio) / 2;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -425,7 +425,7 @@ gsap.to('#page1',{
     trigger:'#page1',
     start:'top top',
     end:'bottom top',
-    marker:true,
+    // marker:true,
     pin:true,
     scroller:'#main'
   }
@@ -436,7 +436,7 @@ gsap.to('#page2',{
     trigger:'#page2',
     start:'top top',
     end:'bottom top',
-    marker:true,
+    // marker:true,
     pin:true,
     scroller:'#main'
   }
@@ -447,8 +447,21 @@ gsap.to('#page3',{
     trigger:'#page3',
     start:'top top',
     end:'bottom top',
+    // marker:true,
+    pin:true,
+    scroller:'#main',
+  }
+})
+
+
+gsap.to('#page4',{
+  scrollTrigger:{
+    trigger:'#page3',
+    start:'0% 0%',
+    end:'bottom top',
     marker:true,
     pin:true,
-    scroller:'#main'
+    scroller:'#main',
+
   }
 })
