@@ -459,7 +459,7 @@ gsap.to('#page4',{
     trigger:'#page3',
     start:'0% 0%',
     end:'bottom top',
-    marker:true,
+    // marker:true,
     pin:true,
     scroller:'#main',
 
